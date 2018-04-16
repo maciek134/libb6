@@ -37,8 +37,7 @@ namespace b6 {
   };
 
   struct ChargeInfo {
-    int state, tempExt, tempInt, capacity, time, voltage, current, impendance, cells[8];
-    bool completed;
+    unsigned int state, tempExt, tempInt, capacity, time, voltage, current, impendance, cells[8];
   };
 
   struct ChargeProfile {

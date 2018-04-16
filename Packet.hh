@@ -41,8 +41,8 @@ namespace b6 {
 
     uint8_t* getBuffer() { return &m_buf[0]; }
     int getSize() { return static_cast<int>(m_buf.size()); }
-    std::vector<uint8_t> m_buf;
   private:
+    std::vector<uint8_t> m_buf;
     int m_readPos = 0;
   };
 }

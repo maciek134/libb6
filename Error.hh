@@ -22,29 +22,72 @@
 #include <exception>
 
 namespace b6 {
-  class ChargingError : public std::exception {};
+  class ChargingError : public std::exception {
+  public:
+    virtual std::string message() { return "Charging Error"; };
+  };
 
-  class ErrorConnectionBroken : public ChargingError {};
-  class ErrorCellVoltageInvalid : public ChargingError {};
-  class ErrorBalanceConnection : public ChargingError {};
-  class ErrorNoBattery : public ChargingError {};
-  class ErrorCellNumberIncorrect : public ChargingError {};
-  class ErrorConnectionMainPort : public ChargingError {};
-  class ErrorBatteryFull : public ChargingError {};
-  class ErrorChargeNotNeeded : public ChargingError {};
-  class ErrorCellHighVoltage : public ChargingError {};
-  class ErrorIntTempTooHigh : public ChargingError {};
-  class ErrorExtTempTooHigh : public ChargingError {};
-  class ErrorDCInTooLow : public ChargingError {};
-  class ErrorDCInTooHigh : public ChargingError {};
-  class ErrorOverTimeLimit : public ChargingError {};
-  class ErrorOverCapacityLimit : public ChargingError {};
-  class ErrorReversePolarity : public ChargingError {};
+  class ErrorConnectionBroken : public ChargingError {
+    std::string message() { return "Connection broken!"; };
+  };
+  class ErrorCellVoltageInvalid : public ChargingError {
+    std::string message() { return "Cell voltage invalid!"; };
+  };
+  class ErrorBalanceConnection : public ChargingError {
+    std::string message() { return "Balance connection error!"; };
+  };
+  class ErrorNoBattery : public ChargingError {
+    std::string message() { return"No battery detected!"; };
+  };
+  class ErrorCellNumberIncorrect : public ChargingError {
+    std::string message() { return"Cell number incorrect!"; };
+  };
+  class ErrorConnectionMainPort : public ChargingError {
+    std::string message() { return"Main battery port disconnected!"; };
+  };
+  class ErrorBatteryFull : public ChargingError {
+    std::string message() { return"Battery full!"; };
+  };
+  class ErrorChargeNotNeeded : public ChargingError {
+    std::string message() { return"Charging not needed!"; };
+  };
+  class ErrorCellHighVoltage : public ChargingError {
+    std::string message() { return"Cell voltage high!"; };
+  };
+  class ErrorIntTempTooHigh : public ChargingError {
+    std::string message() { return"Internal temperature too high!"; };
+  };
+  class ErrorExtTempTooHigh : public ChargingError {
+    std::string message() { return"External temperature too high!"; };
+  };
+  class ErrorDCInTooLow : public ChargingError {
+    std::string message() { return"DC-in too low!"; };
+  };
+  class ErrorDCInTooHigh : public ChargingError {
+    std::string message() { return"DC-in too high!"; };
+  };
+  class ErrorOverTimeLimit : public ChargingError {
+    std::string message() { return"Time limit reached!"; };
+  };
+  class ErrorOverCapacityLimit : public ChargingError {
+    std::string message() { return"Capacity limit reached!"; };
+  };
+  class ErrorReversePolarity : public ChargingError {
+    std::string message() { return"Reverse polarity!"; };
+  };
   // WTF LAND BELOW
-  class ErrorControlFail : public ChargingError {};
-  class ErrorBreakDown : public ChargingError {};
-  class ErrorInputFail : public ChargingError {};
-  class ErrorUnknown : public ChargingError {};
+  class ErrorControlFail : public ChargingError {
+    std::string message() { return"WTF: Control Fail"; };
+  };
+  class ErrorBreakDown : public ChargingError {
+    std::string message() { return"WTF: Break Down"; };
+  };
+  class ErrorInputFail : public ChargingError {
+    std::string message() { return"WTF: Input Fail"; };
+  };
+  class ErrorUnknown : public ChargingError {
+    std::string message() { return"WTF: Unknown"; };
+  };
 }
 
 #endif //LIB_B6_DEMO_ERROR_HH
