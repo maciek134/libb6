@@ -15,7 +15,7 @@ Run these commands to install the library and it's headers on your system:
 ```bash
 $ mkdir build
 $ cd build
-$ cmake .. -DCMAKE_INSTALL_PREFIX=/usr
+$ cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DCMAKE_BUILD_TYPE=Release
 $ make
 $ sudo make install
 ```
